@@ -1,0 +1,36 @@
+Events:
+
+[vk.error] Access denied: this profile is private: 28978
+[vk.error] Access denied: user deactivated: 419581
+[vk.error] Too many requests per second: 9791
+[vk.proc] Added Users: 347102
+[vk.proc] Faces: 1487796
+[vk.proc] No faces: 100599
+[vk.proc] No photos: 640268
+[vk.proc] Skip faces: 14101
+[vk.proc] Tried Users: 1088750
+
+Part time:
+
+1089840 IDs, 608.57 hours, AVG: 2.01 sec/acc, TOTAL: 0.12 sec/acc
+
+det2-1: 83240 IDs, 37.60 hours, 1.63 sec/acc
+det2-2: 83440 IDs, 35.32 hours, 1.52 sec/acc
+det2-3: 26960 IDs, 11.49 hours, 1.53 sec/acc
+det2-4: 88240 IDs, 37.41 hours, 1.53 sec/acc
+detm-1: 77120 IDs, 46.85 hours, 2.19 sec/acc
+detm-10: 77120 IDs, 46.88 hours, 2.19 sec/acc
+detm-2: 74520 IDs, 46.83 hours, 2.26 sec/acc
+detm-3: 74480 IDs, 46.84 hours, 2.26 sec/acc
+detm-4: 76000 IDs, 46.84 hours, 2.22 sec/acc
+detm-5: 76440 IDs, 46.85 hours, 2.21 sec/acc
+detm-6: 61760 IDs, 39.46 hours, 2.30 sec/acc
+detm-7: 76240 IDs, 46.79 hours, 2.21 sec/acc
+detm-8: 60160 IDs, 38.77 hours, 2.32 sec/acc
+detm-9: 60000 IDs, 38.72 hours, 2.32 sec/acc
+f.com: 86560 IDs, 38.45 hours, 1.60 sec/acc
+f.com-2: 7560 IDs, 3.45 hours, 1.64 sec/acc
+
+	vk:
+SZ_MN = 450
+SZ_MX = 800

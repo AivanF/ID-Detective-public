@@ -1,0 +1,16 @@
+{
+	"_": {"avg": 1.5, "total": 0.11},
+	"aivan": {"count": 2920, "seconds": 2285},
+	"detm-1": {"count": 13720, "seconds": 34564},
+	"detm-2": {"count": 13360, "seconds": 33232},
+	"detm-3": {"count": 31000, "seconds": 39593},
+	"detm-4": {"count": 31240, "seconds": 40370},
+	"detm-5": {"count": 22880, "seconds": 31264},
+	"detm-6": {"count": 22920, "seconds": 31255},
+	"detm-7": {"count": 22880, "seconds": 31243},
+	"detm-8": {"count": 22800, "seconds": 31288},
+	"det2-1": {"count": 19600, "seconds": 39409},
+	"det2-2": {"count": 32880, "seconds": 39770},
+	"det2-3": {"count": 29160, "seconds": 31850},
+	"f.com": {"count": 19120, "seconds": 39857}
+}

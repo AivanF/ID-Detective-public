@@ -1,0 +1,10 @@
+{
+	"det2": {
+		"access": {"user": "root", "host": "194.58.108.xx", "pw": "xxxxxx"},
+		"workers": ["det2-1", "det2-2", "det2-3", "det2-4"]
+	},
+	"detm": {
+		"workers": ["detm-1", "detm-2", "detm-3", "detm-4", "detm-5", "detm-6", "detm-7", "detm-8", "detm-9", "detm-10"],
+		"access": {"user": "root", "host": "176.99.9.xx", "pw": "xxxxxx"}
+	}
+}

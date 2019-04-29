@@ -1,0 +1,36 @@
+sudo apt-get update
+sudo apt-get install python3.6
+sudo apt-get install python3-pip -y
+
+
+https://askubuntu.com/a/178726/884549
+mkdir /media/fasthdd
+dd if=/dev/zero of=/media/fasthdd/swapfile.img bs=1024 count=2M
+mkswap /media/fasthdd/swapfile.img
+swapon /media/fasthdd/swapfile.img
+cat /proc/swaps
+grep 'Swap' /proc/meminfo
+
+
+apt-get install git-core
+sudo apt-get install cmake
+
+pip install setuptools
+sudo apt-get install python3-dev
+
+mkdir /aivanf ; cd /aivanf ; git clone https://github.com/davisking/dlib.git
+cd dlib ; python3 setup.py install
+
+pip3 install face_recognition
+
+		[ - Server - ]
+// install MySQL 8
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.10-1_all.deb
+dpkg -i mysql-apt-config_0.8.10-1_all.deb
+apt-get update
+apt-get install mysql-server
+
+pip3 install mysqlclient
+pip3 install flask
+
+mysql_config not found

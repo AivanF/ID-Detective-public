@@ -1,0 +1,100 @@
+explain format=json
+SELECT user_id, MAX(ratio) AS ratio, COUNT(*) AS cnt, GROUP_CONCAT(name SEPARATOR ' ') AS names
+FROM (
+	SELECT user_id, name, 1.0-f_difference(f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31, f32, f33, f34, f35, f36, f37, f38, f39, f40, f41, f42, f43, f44, f45, f46, f47, f48, f49, f50, f51, f52, f53, f54, f55, f56, f57, f58, f59, f60, f61, f62, f63, f64, f65, f66, f67, f68, f69, f70, f71, f72, f73, f74, f75, f76, f77, f78, f79, f80, f81, f82, f83, f84, f85, f86, f87, f88, f89, f90, f91, f92, f93, f94, f95, f96, f97, f98, f99, f100, f101, f102, f103, f104, f105, f106, f107, f108, f109, f110, f111, f112, f113, f114, f115, f116, f117, f118, f119, f120, f121, f122, f123, f124, f125, f126, f127,
+		-0.04255197, 0.09532648, 0.07054815, -0.16549776, -0.12415121, 0.0382191, -0.07312493, -0.09611742, 0.22047682, -0.19801548, 0.15259135, -0.01134261, -0.23963471, 0.01833748, -0.0281624, 0.14097191, -0.23807517, -0.18534157, 0.04293261, -0.06319501, 0.10242895, 0.05262198, 0.02820483, 0.0663024, -0.21452512, -0.32003132, -0.14339951, -0.08019556, -0.03159906, -0.17876017, 0.04818383, 0.0482966, -0.15285429, 0.0771955, -0.08601906, 0.14190909, 0.03086096, -0.162838, 0.14963487, 0.06983525, -0.2949585, -0.06675678, 0.07470582, 0.24171038, 0.2419284, -0.0495593, 0.02699855, -0.03074589, 0.10906073, -0.30742577, 0.06049858, 0.16276181, 0.0315482, 0.10094873, 0.02832384, -0.15352346, 0.04531581, 0.06469844, -0.16872023, -0.0229352, 0.1138309, -0.04570557, 0.12566042, 0.03455648, 0.22692364, 0.10793984, -0.12205909, -0.13853617, 0.15222996, -0.22324964, -0.12466218, 0.08134897, -0.16560642, -0.19175343, -0.28343126, 0.00476735, 0.36970544, 0.19197957, -0.05582938, 0.10238559, -0.1282969, -0.04093469, 0.02137784, 0.20352817, 0.0524757, 0.09660726, -0.11416124, 0.12493343, 0.25468287, -0.06270649, -0.0197041, 0.29399148, 0.01617225, 0.05776942, 0.01948751, 0.13631015, -0.10088278, 0.06212247, -0.10556427, 0.04095189, -0.03144231, 0.02062101, -0.03109386, 0.1667155, -0.18951692, 0.22946598, -0.01217839, -0.07699894, -0.09985337, -0.03250569, -0.04266873, -0.02963913, 0.15991759, -0.26606277, 0.08179519, 0.20901035, 0.0205542, 0.17556855, 0.06139373, 0.0995992, 0.03962972, -0.14156368, -0.18063521, -0.01355247, -0.02652007, -0.03475824, 0.0081715, 0.07981398) AS ratio
+	FROM VkUsers
+	HAVING ratio > 0.27040000000000003
+) AS t
+GROUP BY user_id
+ORDER BY ratio DESC
+LIMIT 10;
+
+
+explain format=json
+SELECT ABS(f1-0.5)+SQRT(f2-0.2)+POWER(f3+0.3,2) AS matched_2
+FROM (
+    SELECT user_id, f1, f2, f3, STRCMP(name,'lol') AS matched_1
+    FROM VkUsers
+    HAVING matched_1 > 0.5
+) AS basic
+HAVING matched_2 > 0.7
+ORDER BY matched_2;
+
+12950
+explain format=json
+SELECT ABS(f1-0.5)+SQRT(f2-0.2)+POWER(f3+0.3,2) AS matched_2
+FROM (
+    SELECT user_id, name, STRCMP(name,'lol') AS matched_1
+    FROM VkUsers
+    HAVING matched_1 > 0.5
+) AS t1
+LEFT JOIN (
+    SELECT user_id, name, f1, f2, f3 FROM VkUsers
+) AS t2
+ON t1.user_id = t2.user_id AND t1.name = t2.name
+HAVING matched_2 > 0.7
+ORDER BY matched_2;
+
+
+18941
+explain format=json
+SELECT ABS(f1-0.5)+SQRT(f2-0.2)+POWER(f3+0.3,2) AS matched_2
+FROM (
+    SELECT user_id, name, STRCMP(name,'lol') AS matched_1
+    FROM VkUsers
+    HAVING matched_1 > 0.5
+) AS t1
+LEFT JOIN VkUsers AS t2
+ON t1.user_id = t2.user_id AND t1.name = t2.name
+HAVING matched_2 > 0.7
+ORDER BY matched_2;
+
+
+
+
+SELECT user_id, MAX(ratio) AS ratio, COUNT(*) AS cnt, GROUP_CONCAT(name SEPARATOR ' ') AS names
+FROM (
+    SELECT user_id, name, 1.0-f_difference({}, {}) AS ratio
+    FROM VkUsers
+    HAVING ratio > {}
+) AS t
+GROUP BY user_id
+ORDER BY ratio DESC
+LIMIT 10
+
+
+SELECT user_id, MAX(ratio) AS ratio, COUNT(*) AS cnt, GROUP_CONCAT(name SEPARATOR ' ') AS names
+FROM (
+    SELECT user_id, name, 1.0-f_difference({}, {}) AS ratio
+    FROM (
+        SELECT user_id, name, {}, BIT_COUNT(mask & UNHEX('{}')) AS matched_bits
+        FROM VkUsers
+        HAVING matched_bits >= 45
+    ) AS basic
+    HAVING ratio > {}
+) AS t
+GROUP BY user_id
+ORDER BY ratio DESC
+LIMIT 10
+
+
+
+SELECT user_id, name, BIT_COUNT(mask & UNHEX('01409842508054104218428092210488a59454a2420682024402600092201400')) AS matched_bits
+FROM VkUsers
+WHERE user_id = 140795851
+ORDER BY matched_bits DESC;
+
+
+SELECT AVG(matched_bits) AS avg_matched, COUNT(*) AS cnt
+FROM (
+    SELECT user_id, name, BIT_COUNT(mask & UNHEX('01409842508054104218428092210488a59454a2420682024402600092201400')) AS matched_bits
+    FROM VkUsers
+    HAVING matched_bits >= 45
+) AS basic;
+
+
+SELECT user_id, name, HEX(mask) AS mask
+FROM VkUsers
+WHERE user_id = 140795851;
+
